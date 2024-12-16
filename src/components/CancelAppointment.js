@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
-import "../CSS/CancelAppointment.css"; // Import CSS
-
-const API_BASE_URL = "http://localhost:8080/api/patient";
+import axios from "../services/api";
+import "../CSS/CancelAppointment.css";
 
 function CancelAppointment() {
   const [appointmentId, setAppointmentId] = useState("");
@@ -11,37 +9,35 @@ function CancelAppointment() {
 
   const handleCancel = async () => {
     try {
-      await axios.put(
-        `${API_BASE_URL}/cancelAppointment/${appointmentId}`,
-        reason,
-        {
-          headers: { "Content-Type": "text/plain" },
-        }
-      );
+      await axios.delete(`/patient/appointments/${appointmentId}`);
       alert("Appointment canceled successfully!");
-    } catch (err) {
-      setError("Failed to cancel appointment. Please try again.");
+    } catch (error) {
+      console.error("Error canceling appointment:", error);
     }
   };
 
   return (
-    <div className="page-container">
+    <div className="cancel-appointment">
       <h2>Cancel Appointment</h2>
-      <div className="form-container">
+      <form className="cancel-form">
+        <label>Appointment ID:</label>
         <input
           type="text"
-          placeholder="Appointment ID"
           value={appointmentId}
           onChange={(e) => setAppointmentId(e.target.value)}
+          placeholder="Enter Appointment ID"
         />
+        <label>Reason</label>
         <textarea
+          colspan="3"
           placeholder="Reason for cancellation"
           value={reason}
           onChange={(e) => setReason(e.target.value)}
         />
-        <button onClick={handleCancel}>Cancel Appointment</button>
-        {error && <p className="error-message">{error}</p>}
-      </div>
+        <button type="button" onClick={handleCancel}>
+          Cancel Appointment
+        </button>
+      </form>
     </div>
   );
 }

@@ -1,0 +1,91 @@
+/* Main container styling for ViewDoctors */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #a3dbe5; /* Light blue background outside the form */
+  font-family: Arial, sans-serif;
+}
+.view-doctors {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.view-doctors h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form container for filters */
+.find-doctors {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 1px; /* Reduced spacing between elements */
+  margin-bottom: 20px;
+  align-items: center; /* Center align the form elements */
+}
+
+/* Label styling with less bottom margin */
+.find-doctors label {
+  margin-bottom: 2px; /* Reduced space between label and input */
+  font-size: 17px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+/* Input fields in filter form */
+.find-doctors input {
+  padding: 8px; /* Slightly reduced padding */
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font size */
+  width: 100%; /* Adjusted to full width */
+  max-width: 300px; /* Restrict maximum width */
+}
+
+/* Search button */
+.find-doctors button {
+  padding: 8px 15px; /* Reduced button padding */
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px; /* Smaller font size */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Add spacing above button */
+}
+
+.find-doctors button:hover {
+  background-color: #16a085;
+}
+
+/* List of doctors */
+.view-doctors ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Individual doctor card */
+.view-doctors li {
+  background-color: white;
+  border: 1px solid #bdc3c7;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Doctor details text */
+.view-doctors li p {
+  margin: 5px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}

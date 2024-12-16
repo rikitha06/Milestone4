@@ -1,68 +1,52 @@
-/* Shared styling for forms */
-.page-container {
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #a3dbe5; /* Light blue background outside the form */
   font-family: Arial, sans-serif;
-  margin: 20px;
+}
+.cancel-appointment {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-h2 {
+.cancel-appointment h2 {
   text-align: center;
-  color: rgb(11, 11, 11);
-  font-size: 2rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
-/* Form styling */
-.form-container {
+.cancel-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 15px;
 }
 
-.form-container label {
-  font-size: 1rem;
-  margin-bottom: 5px;
-  color: #333;
-  width: 100%;
-  text-align: left;
+.cancel-form label {
+  font-size: 14px;
+  color: #555;
 }
 
-.form-container input,
-.form-container textarea {
-  width: 100%;
+.cancel-form input {
   padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 15px;
+  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-.form-container input:focus,
-.form-container textarea:focus {
-  outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
-textarea {
-  height: 100px;
-  resize: none;
-}
-
-.form-container button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  font-size: 1rem;
+.cancel-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .form-container button:hover {
@@ -115,4 +99,7 @@ textarea {
   .form-container button {
     font-size: 0.9rem;
   }
+}
+.cancel-form button:hover {
+  background-color: #c82333;
 }

@@ -1,34 +1,26 @@
 import React, { useState } from "react";
 import axios from "../services/api";
-import "../CSS/UpdateAppointment.css";
+import "../CSS/MakeAppointments.css";
 
-function UpdateAppointment() {
-  const [appointmentId, setAppointmentId] = useState("");
+function MakeAppointment() {
   const [doctorId, setDoctorId] = useState("");
   const [appointmentDateTime, setAppointmentDateTime] = useState("");
   const [reason, setReason] = useState("");
 
-  const handleUpdate = async () => {
+  const handleAppointmentSubmission = async () => {
     const data = { doctorId, appointmentDateTime, reason };
     try {
-      await axios.put(`/patient/appointments/${appointmentId}`, data);
-      alert("Appointment updated successfully!");
+      await axios.post("/patient/book-appointment", data);
+      alert("Appointment booked successfully!");
     } catch (error) {
-      console.error("Error updating appointment:", error);
+      console.error("Error booking appointment:", error);
     }
   };
 
   return (
-    <div className="update-appointment">
-      <h2>Update Appointment</h2>
+    <div className="make-appointment">
+      <h2>Make Appointment</h2>
       <form className="appointment-form">
-        <label>Appointment ID:</label>
-        <input
-          type="text"
-          value={appointmentId}
-          onChange={(e) => setAppointmentId(e.target.value)}
-          placeholder="Enter Appointment ID"
-        />
         <label>Doctor ID:</label>
         <input
           type="text"
@@ -48,12 +40,12 @@ function UpdateAppointment() {
           onChange={(e) => setReason(e.target.value)}
           placeholder="Enter reason"
         ></textarea>
-        <button type="button" onClick={handleUpdate}>
-          Update Appointment
+        <button type="button" onClick={handleAppointmentSubmission}>
+          Book Appointment
         </button>
       </form>
     </div>
   );
 }
 
-export default UpdateAppointment;
+export default MakeAppointment;
