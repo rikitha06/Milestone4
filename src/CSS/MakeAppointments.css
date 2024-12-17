@@ -43,6 +43,7 @@ html {
 .appointment-form textarea {
   resize: none;
   height: 100px;
+  width: 90%;
 }
 
 .appointment-form button {

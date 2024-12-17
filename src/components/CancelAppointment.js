@@ -29,7 +29,6 @@ function CancelAppointment() {
         />
         <label>Reason</label>
         <textarea
-          colspan="3"
           placeholder="Reason for cancellation"
           value={reason}
           onChange={(e) => setReason(e.target.value)}
